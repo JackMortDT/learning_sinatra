@@ -6,7 +6,15 @@ class Todo < Sinatra::Base
   configure do
   end
 
-      Dir[File.join(File.dirname(__FILE__),'models','*.rb')].each { |model| require     model }
-    Dir[File.join(File.dirname(__FILE__),'lib','*.rb')].each { |lib| load lib }
+    Dir[File.join(File.dirname(__FILE__),'models','*.rb')].each { |model| require     model }
+    Dir[File.join(File.dirname(__FILE__),'lib/','*.rb')].each { |lib| load lib }
+
+    get '/' do
+      "Hello world"
+    end
+
+    get '/test' do
+      "Hello Test"
+    end
 
   end
